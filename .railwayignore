@@ -1,0 +1,9 @@
+node_modules
+.git
+.corepack
+**/.env.local
+.env.local
+.nx/cache
+coverage
+dist
+*.log
