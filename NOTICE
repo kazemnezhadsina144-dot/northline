@@ -1,0 +1,18 @@
+Northline
+Copyright 2026 Sina Kazemnezhad
+
+This product is derived from the 0x Swap API v2 AllowanceHolder Next.js example
+published by ZeroEx Labs under the Apache License, Version 2.0.
+
+Upstream repository: https://github.com/0xProject/0x-examples
+Upstream path: swap-v2-allowance-holder-next-app
+Baseline commit: 1d9c57c0a55b00e9927cbe25eb34107cb077a377
+Baseline commit time: 2025-12-11T04:59:47Z
+Upstream copyright: Copyright 2025 ZeroEx Labs
+
+The upstream example states that it is not production-ready and has not been
+audited. Northline does not vendor that application. It reimplements the
+documented AllowanceHolder price, approval, and firm-quote flow, with the
+transaction checks described in UPSTREAM.md.
+
+Licensed under the Apache License, Version 2.0. See LICENSE.
