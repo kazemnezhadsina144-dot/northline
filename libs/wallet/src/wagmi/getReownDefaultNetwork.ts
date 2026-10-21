@@ -17,5 +17,5 @@ export function getReownDefaultNetwork(): AppKitNetwork {
 
   if (isEvmChain(urlChainId)) return VIEM_CHAINS[urlChainId]
 
-  return VIEM_CHAINS[EvmChains.MAINNET]
+  return VIEM_CHAINS[EvmChains.BASE]
 }

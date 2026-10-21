@@ -4,13 +4,14 @@
   "description": "CoW Protocol",
   "main": "index.js",
   "author": "",
-  "license": "ISC",
+  "license": "GPL-3.0-only",
   "packageManager": "pnpm@10.30.3",
   "config": {
     "enabledApps": "cowswap-frontend abis ui ui-utils widget-lib widget-react"
   },
   "scripts": {
-    "start": "pnpm run start:cowswap",
+    "start": "node tools/serve-northline.mjs",
+    "start:dev": "pnpm run start:cowswap",
     "start:cowswap": "cross-env NODE_ENV=development nx run cowswap-frontend:serve",
     "start:widget": "nx run widget-configurator:serve",
     "start:omnibridge-hook": "nx run hook-dapp-omnibridge:serve",
@@ -109,7 +110,15 @@
     "strictDepBuilds": true,
     "allowBuilds": {
       "nx": true,
-      "@swc/core": true
+      "@swc/core": true,
+      "esbuild": true,
+      "@parcel/watcher": true,
+      "sharp": true,
+      "keccak": true,
+      "secp256k1": true,
+      "unrs-resolver": true,
+      "bufferutil": true,
+      "utf-8-validate": true
     },
     "overrides": {
       "@wagmi/core": "3.4.8",

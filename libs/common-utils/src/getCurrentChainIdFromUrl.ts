@@ -21,7 +21,7 @@ const chainNameToIdMap: { [key: string]: SupportedChainId } = {
 }
 
 export function getCurrentChainIdFromUrl(location = window.location): SupportedChainId {
-  return getRawCurrentChainIdFromUrl(location) || SupportedChainId.MAINNET
+  return getRawCurrentChainIdFromUrl(location) || SupportedChainId.BASE
 }
 
 // Trying to get chainId from URL (#/100/swap)

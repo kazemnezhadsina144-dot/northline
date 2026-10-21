@@ -1,3 +1,9 @@
+# Northline
+
+Northline is a self-custodial trading interface for Base. This tree is a fork of [CoW Swap](https://github.com/cowprotocol/cowswap) `develop` at `a9591272bc93f63cddcb8b4e4ae45bbb7abfa48f`, licensed under GPL-3.0. Orders are signed in the user's wallet and settled by CoW Protocol. Northline does not custody funds and is not the official CoW Swap site.
+
+The earlier 0x AllowanceHolder implementation remains on `archive/0x-allowance-holder`.
+
 [![Tests](https://github.com/cowprotocol/cowswap/workflows/CI/badge.svg)](https://github.com/cowprotocol/cowswap/actions/workflows/ci.yml?query=workflow%3ACI)
 
 CoW Swap is the first trading interface built on top of CoW Protocol.
