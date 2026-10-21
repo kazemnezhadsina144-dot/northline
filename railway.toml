@@ -1,8 +1,8 @@
 [build]
-builder = "RAILPACK"
-buildCommand = "pnpm install --frozen-lockfile && pnpm run build:cowswap"
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
 
 [deploy]
 startCommand = "node tools/serve-northline.mjs"
 healthcheckPath = "/api/health"
-healthcheckTimeout = 300
+healthcheckTimeout = 120
