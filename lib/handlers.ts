@@ -18,7 +18,8 @@ import {
 } from "./validate";
 import { fetchProvider } from "./zeroex";
 
-export const INDICATIVE_TAKER = "0x0000000000000000000000000000000000000001" as Address;
+/** Price-only stand-in. 0x rejects taker addresses at or below 0xffff. */
+export const INDICATIVE_TAKER = "0x0000000000000000000000000000000000010000" as Address;
 
 export type Deps = {
   env: Env;

@@ -1,6 +1,31 @@
+import { existsSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { CURATED_TOKENS } from "../lib/tokens";
 import { readEnv } from "../lib/env";
 import { createHandlers } from "../lib/handlers";
+
+function loadEnvFile(name: string): void {
+  const path = resolve(process.cwd(), name);
+  if (!existsSync(path)) return;
+  for (const line of readFileSync(path, "utf8").split("\n")) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#") || !trimmed.includes("=")) continue;
+    const eq = trimmed.indexOf("=");
+    const key = trimmed.slice(0, eq).trim();
+    if (!key || process.env[key] !== undefined) continue;
+    let value = trimmed.slice(eq + 1).trim();
+    if (
+      (value.startsWith("\"") && value.endsWith("\"")) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+    process.env[key] = value;
+  }
+}
+
+loadEnvFile(".env.local");
+loadEnvFile(".env");
 
 const weth = CURATED_TOKENS.find((token) => token.symbol === "WETH");
 const usdc = CURATED_TOKENS.find((token) => token.symbol === "USDC");
