@@ -35,7 +35,7 @@ export function ConnectWalletModal(): ReactNode {
           <Trans>Connect wallet</Trans>
         </h3>
         <p style={{ marginBottom: 20, color: 'var(--cow-color-text2)' }}>
-          <Trans>Choose a wallet to connect to CoW Swap</Trans>
+          <Trans>Choose a wallet to connect to Northline. You sign every order.</Trans>
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {connectors.map((connector) => (

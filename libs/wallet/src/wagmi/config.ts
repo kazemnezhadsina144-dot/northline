@@ -61,11 +61,10 @@ const solanaRpcUrl = RPC_URLS[SupportedChainId.SOLANA]
 customRpcUrls[solana.caipNetworkId] = [{ url: solanaRpcUrl }]
 
 const metadata = {
-  name: 'CoW Swap | The smartest way to trade cryptocurrencies',
-  description:
-    'CoW Swap finds the lowest prices from all decentralized exchanges and DEX aggregators & saves you more with p2p trading and protection from MEV',
-  url: 'https://swap.cow.fi',
-  icons: ['https://swap.cow.fi/apple-touch-icon.png'],
+  name: 'Northline',
+  description: 'Self-custodial trades on Base. You sign each order. CoW Protocol settles it.',
+  url: 'https://northline-production-5010.up.railway.app',
+  icons: ['https://northline-production-5010.up.railway.app/favicon.svg'],
 }
 
 const solanaAdapter = new SolanaAdapter({

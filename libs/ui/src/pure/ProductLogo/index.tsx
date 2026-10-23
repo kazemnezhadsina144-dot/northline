@@ -38,6 +38,7 @@ export enum ProductVariant {
   MevBlocker = 'mevBlocker',
   CowAmm = 'cowAmm',
   CowDao = 'cowDao',
+  Northline = 'northline',
 }
 
 interface LogoInfo {
@@ -47,6 +48,40 @@ interface LogoInfo {
   height?: string // Optional height for both desktop and mobile
   heightMobile?: string // Optional height specifically for mobile
   preserveOriginalColors?: boolean // If true, original SVG colors will be preserved
+}
+
+function NorthlineMark({ iconOnly, title }: { iconOnly: boolean; title: string }): ReactNode {
+  const mark = (
+    <g fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M14 22.5V6.5" />
+      <path d="M8.75 11.75 14 6.5l5.25 5.25" />
+    </g>
+  )
+
+  if (iconOnly) {
+    return (
+      <svg viewBox="0 0 28 28" role="img" aria-label={title}>
+        {mark}
+      </svg>
+    )
+  }
+
+  return (
+    <svg viewBox="0 0 176 28" role="img" aria-label={title}>
+      {mark}
+      <text
+        x="30"
+        y="18.5"
+        fill="currentColor"
+        fontFamily="Inter, Helvetica, Arial, sans-serif"
+        fontSize="14"
+        fontWeight="600"
+        letterSpacing="2.6"
+      >
+        NORTHLINE
+      </text>
+    </svg>
+  )
 }
 
 const LOGOS: Record<ProductVariant, ThemedLogo> = {
@@ -272,6 +307,33 @@ const LOGOS: Record<ProductVariant, ThemedLogo> = {
       },
     },
   },
+
+  [ProductVariant.Northline]: {
+    light: {
+      default: {
+        src: iconCowSrc,
+        alt: 'Northline',
+        preserveOriginalColors: true,
+      },
+      logoIconOnly: {
+        src: iconCowSrc,
+        alt: 'Northline',
+        preserveOriginalColors: true,
+      },
+    },
+    dark: {
+      default: {
+        src: iconCowSrc,
+        alt: 'Northline',
+        preserveOriginalColors: true,
+      },
+      logoIconOnly: {
+        src: iconCowSrc,
+        alt: 'Northline',
+        preserveOriginalColors: true,
+      },
+    },
+  },
 }
 
 export interface LogoProps {
@@ -371,7 +433,12 @@ export const ProductLogo = ({
     return `${linkText}${baseAlt}`
   }
 
-  const logoElement = <SVG src={logoInfo.src} description={getAccessibleAltText()} />
+  const logoElement =
+    variant === ProductVariant.Northline ? (
+      <NorthlineMark iconOnly={Boolean(logoIconOnly)} title={getAccessibleAltText()} />
+    ) : (
+      <SVG src={logoInfo.src} description={getAccessibleAltText()} />
+    )
 
   return (
     <ProductLogoWrapper

@@ -16,7 +16,7 @@ import { Routes } from 'common/constants/routes'
 
 import { getSolversExplorerUrl } from './menuConsts.utils'
 
-export const PRODUCT_VARIANT = ProductVariant.CowSwap
+export const PRODUCT_VARIANT = ProductVariant.Northline
 
 type UntranslatedMenuItem = {
   label: MessageDescriptor

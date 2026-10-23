@@ -167,23 +167,18 @@ function FooterSection({
     <styledEl.FooterSlot>
       {bubbleElement}
       {pageScene && <styledEl.SceneContainer>{pageScene}</styledEl.SceneContainer>}
-      <Footer productVariant={PRODUCT_VARIANT} additionalFooterContent={ADDITIONAL_FOOTER_CONTENT} hasTouchFooter />
+      <Footer
+        productVariant={PRODUCT_VARIANT}
+        additionalFooterContent={ADDITIONAL_FOOTER_CONTENT}
+        hasTouchFooter
+        description="Northline is a self-custodial trading interface for Base. You sign each order in your wallet. CoW Protocol settles it."
+        legalLine={`Northline · ${new Date().getFullYear()} · orders settle through CoW Protocol`}
+      />
     </styledEl.FooterSlot>
   )
 }
 
-function shouldDisplayCowSpeechBubble({
-  isInjectedWidgetMode,
-  pageScene,
-  pageBackgroundVariant,
-  customTheme,
-  isChristmasTheme,
-}: CowSpeechBubbleVisibilityParams): boolean {
-  return (
-    !isInjectedWidgetMode &&
-    !pageScene &&
-    pageBackgroundVariant !== 'nocows' &&
-    customTheme !== 'darkHalloween' &&
-    !isChristmasTheme
-  )
+function shouldDisplayCowSpeechBubble(params: CowSpeechBubbleVisibilityParams): boolean {
+  void params
+  return false
 }

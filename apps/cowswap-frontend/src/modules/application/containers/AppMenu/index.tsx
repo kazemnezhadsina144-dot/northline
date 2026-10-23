@@ -119,16 +119,20 @@ export function AppMenu({ children, customTheme: overriddenCustomTheme }: AppMen
   return (
     <MenuBar
       LinkComponent={LinkComponent}
-      activeBackgroundDark="#282854"
-      activeFillDark="#DEE3E6"
+      activeBackgroundLight="#ffffff"
+      activeBackgroundDark="#1a2833"
+      activeFillDark="#f4f7f8"
+      hoverBackgroundLight="rgba(20, 32, 43, 0.06)"
       additionalContent={null} // On desktop renders inside the menu bar, on mobile renders inside the mobile menu
-      bgColorDark={'rgb(222 227 230 / 7%)'}
+      bgColorLight="rgba(255, 255, 255, 0.78)"
+      bgColorDark="rgba(10, 16, 22, 0.78)"
+      colorLight="#14202b"
       bgDropdownColorDark={Color.neutral0}
       bgDropdownColorLight={Color.neutral100}
-      colorDark={'#DEE3E6'}
+      colorDark="#e7eef2"
       customTheme={customTheme}
-      defaultFillDark="rgba(222, 227, 230, 0.4)"
-      hoverBackgroundDark={'#18193B'}
+      defaultFillDark="rgba(231, 238, 242, 0.45)"
+      hoverBackgroundDark="#152029"
       id={APP_HEADER_ELEMENT_ID}
       languageNavItems={languageNavItems}
       navItems={navItems}

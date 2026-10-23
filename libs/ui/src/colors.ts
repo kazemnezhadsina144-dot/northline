@@ -499,8 +499,8 @@ function getPrimaryColors(darkMode: boolean): {
   buttonTextCustom: string
 } {
   return {
-    primary: darkMode ? Color.blue300Primary : Color.blueDark2,
-    buttonTextCustom: darkMode ? Color.black : Color.blue300Primary,
+    primary: darkMode ? '#9fd8cf' : '#163044',
+    buttonTextCustom: darkMode ? '#071016' : '#f4f7f8',
   }
 }
 

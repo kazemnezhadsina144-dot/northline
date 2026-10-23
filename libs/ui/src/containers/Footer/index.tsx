@@ -48,6 +48,7 @@ export interface FooterProps {
   hasTouchFooter?: boolean
   maxWidth?: number
   host?: string
+  legalLine?: string
 }
 
 export interface NavItemProps extends Omit<MenuItem, 'label' | 'badge'> {
@@ -100,11 +101,13 @@ export const GLOBAL_FOOTER_NAV_ITEMS = getGlobalFooterNavItems()
 export const Footer = ({
   description = GLOBAL_FOOTER_DESCRIPTION,
   navItems = GLOBAL_FOOTER_NAV_ITEMS,
+  productVariant,
   additionalFooterContent,
   expanded = false,
   hasTouchFooter = false,
   maxWidth,
   host,
+  legalLine,
   // TODO: Add proper return type annotation
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 }: FooterProps) => {
@@ -112,14 +115,11 @@ export const Footer = ({
   const footerRef = useRef<HTMLDivElement>(null)
   const theme = useTheme()
 
-  // TODO: Add proper return type annotation
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const toggleFooter = () => {
     setIsFooterExpanded((state) => {
       if (!state && footerRef.current) {
-        setTimeout(() => {
-          footerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' })
-        }, 300) // Slight delay needed for correct scroll position calculation
+        setTimeout(() => footerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' }), 300)
       }
 
       return !state
@@ -134,7 +134,9 @@ export const Footer = ({
             <FooterDescriptionSection>
               <FooterLogo>
                 <ProductLogo
-                  variant={ProductVariant.CowDao}
+                  variant={
+                    productVariant === ProductVariant.Northline ? ProductVariant.Northline : ProductVariant.CowDao
+                  }
                   height={32}
                   overrideColor={!theme.darkMode ? `var(${UI.COLOR_NEUTRAL_100})` : `var(${UI.COLOR_NEUTRAL_90})`}
                   overrideHoverColor={!theme.darkMode ? `var(${UI.COLOR_NEUTRAL_98})` : `var(${UI.COLOR_NEUTRAL_95})`}
@@ -177,7 +179,7 @@ export const Footer = ({
         </>
       )}
       <FooterBottom maxWidth={maxWidth}>
-        <BottomText>&copy; CoW DAO - {new Date().getFullYear()}</BottomText>
+        <BottomText>{legalLine ?? `© CoW DAO - ${new Date().getFullYear()}`}</BottomText>
         <FooterBottomLogos>
           {PRODUCT_LOGO_LINKS.map((product, index) => (
             <ProductLogo

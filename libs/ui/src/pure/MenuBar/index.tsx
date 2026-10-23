@@ -894,12 +894,14 @@ export const MenuBar = (props: MenuBarProps) => {
       maxWidth={maxWidth}
     >
       <MenuBarInner>
-        <NavDaoTrigger
-          isOpen={isDaoOpen}
-          setIsOpen={setIsDaoOpen}
-          mobileMode={isMedium}
-          LinkComponent={LinkComponent}
-        />
+        {productVariant !== ProductVariant.Northline && (
+          <NavDaoTrigger
+            isOpen={isDaoOpen}
+            setIsOpen={setIsDaoOpen}
+            mobileMode={isMedium}
+            LinkComponent={LinkComponent}
+          />
+        )}
         <ProductLogo
           key={customTheme ?? 'default'}
           variant={productVariant}

@@ -1,8 +1,8 @@
 {
-  "background_color": "#ffffff",
+  "background_color": "#eef3f6",
   "display": "standalone",
-  "homepage_url": "https://swap.cow.fi",
-  "description": "CoW Swap finds the lowest prices from all decentralized exchanges and DEX aggregators & saves you more with p2p trading and protection from MEV",
+  "homepage_url": "https://northline-production-5010.up.railway.app",
+  "description": "Self-custodial trades on Base. Orders are signed in your wallet and settled by CoW Protocol.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -18,8 +18,8 @@
     }
   ],
   "orientation": "portrait",
-  "name": "CoW Swap",
-  "short_name": "CoW Swap",
+  "name": "Northline",
+  "short_name": "Northline",
   "start_url": ".",
-  "theme_color": "#ffffff"
+  "theme_color": "#163044"
 }

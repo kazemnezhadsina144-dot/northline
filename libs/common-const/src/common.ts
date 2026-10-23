@@ -38,7 +38,7 @@ export const AVG_APPROVE_COST_GWEI = 50000n
 export const DEFAULT_APP_CODE = 'CoW Swap'
 export const SAFE_APP_CODE = `${DEFAULT_APP_CODE}-SafeApp`
 
-export const APP_TITLE = msg`CoW Swap | The smartest way to trade cryptocurrencies`
+export const APP_TITLE = msg`Northline | Self-custodial trades on Base`
 
 export const PAGE_TITLES = {
   SWAP: msg`Swap`,
